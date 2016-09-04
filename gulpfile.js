@@ -1,7 +1,8 @@
 var gulp        = require('gulp');
 var insert      = require('gulp-insert');
 var sass        = require('gulp-sass');
-
+var runSequence = require('run-sequence');
+var $           = require('gulp-load-plugins')();
 
 gulp.task('sass', function () {
     gulp.src('app/css/*.scss')
@@ -13,7 +14,6 @@ gulp.task('sass', function () {
         .pipe(gulp.dest("app/css/skins/default"))
 });
 
-/*
 gulp.task('insert', function(){
     gulp.src(['app/css/skins/default/color-vars.css'])
         .pipe(insert.append('</style>'))
@@ -36,4 +36,3 @@ gulp.task('default',  function (cb) {
         ['insert'],
         cb)
 });
-*/
